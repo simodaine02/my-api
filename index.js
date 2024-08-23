@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
 // Usa la porta fornita da Render o la porta 3000 per esecuzioni locali
@@ -6,6 +7,9 @@ const port = process.env.PORT || 3000;
 
 // Middleware per interpretare il corpo delle richieste come JSON
 app.use(express.json());
+
+// Usa il middleware cors per consentire richieste da qualsiasi origine
+app.use(cors());
 
 // Un endpoint di esempio che restituisce un messaggio
 app.get("/", (req, res) => {
