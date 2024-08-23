@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+
+// Usa la porta fornita da Render o la porta 3000 per esecuzioni locali
+const port = process.env.PORT || 3000;
 
 // Middleware per interpretare il corpo delle richieste come JSON
 app.use(express.json());
